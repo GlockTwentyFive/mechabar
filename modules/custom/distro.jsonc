@@ -1,6 +1,6 @@
 {
 	"custom/distro": {
-		"format": "󰣇",
+		"format": "󱄛",
 		"on-click": "calos-walker-launch center",
 		"tooltip-format": "App Launcher"
 	}

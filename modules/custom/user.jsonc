@@ -2,6 +2,7 @@
 	"custom/user": {
 		"format": "󰌽",
 		"on-click": "calos-walker-launch corner",
+		"on-click-right": "pkill -SIGUSR2 waybar",
 		"tooltip-format": "System menu"
 	}
 }
