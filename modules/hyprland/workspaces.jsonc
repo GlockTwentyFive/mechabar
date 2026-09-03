@@ -6,10 +6,13 @@
 		"format": "{icon}",
 		"format-icons": {
 			"active": "",
-			"default": ""
+			"default": "",
+			"game": "󰊴",
+			"special": "◦"
 		},
-		"on-scroll-up": "hyprctl dispatch \"hl.dsp.focus({ workspace = 'r+1' })\"",
-		"on-scroll-down": "hyprctl dispatch \"hl.dsp.focus({ workspace = 'r-1' })\"",
-		"cursor": true
+		"on-scroll-up": "hyprctl dispatch workspace r+1",
+		"on-scroll-down": "hyprctl dispatch workspace r-1",
+		"cursor": true,
+		"show-special": true
 	}
 }

@@ -1,11 +1,48 @@
 {
-	"hyprland/window": {
+  "hyprland/window": {
+      "tooltip": true,
+      "tooltip-format": "Right Click to Exit",
+		"format": "{class}",
 		"rewrite": {
+			"^$": "",
+			// "^Alacritty$": "btop++",
 			"": "Desktop",
-			"kitty": "Terminal",
-			"(.*)sh": "Terminal",
-			"~": "Terminal"
+      "com.github.PintaProject.Pinta": "  Pinta Image Editor",
+			"cava": "  CAVA Audio Visualizer",
+      "Alacritty": "  Alacritty",
+			"firefox": "󰈹  Mozilla Firefox",
+			"btop": "  BTOP++ System Information",
+      "yazi": "  Yazi",
+      "file_chooser": "  Yazi",
+      "System-Update": "󰚰  System Update",
+      "packages": "󱧘  Installed Packages",
+      "About": "󰖷  System Information",
+      "arthur@caliburn": "  arthur@caliburn",
+      "Neovim": "  Neovim",
+      "Calos": "  Neovim",
+      "ffplay": "󰯜  FFmpeg",
+      "mpv": "󰯜  mpv",
+      "pqiv": "  pqiv",
+      "kernel": "󰘚  Kernel Manager",
+      "cmus": "󰝚  cmus Music Player",
+      "vesktop": "  Discord",
+      "steam": "  Steam",
+      "Bluetui": "󰂯  Bluetui",
+      "Impala": "󰖩  Impala",
+      "Wiremix": "󱡬  Wiremix",
+      "clipse": "  Clipse",
+      "dust": "  Dust",
+      "FFPWA-01K961PSAZSCYS2324FFDRTC7Q": "Apple Music",
+      "FFPWA-01K965RT5B50H7XFYV0EAQN4B8": "󰣇  ArchLinux Wiki",
+      "FFPWA-01KAC9901ABNXA5Q8EHX1KRDFV": "HBO Max",
+      "FFPWA-01K966XKVA9QGPGYZB5K84ZBR8": "  Hyprland Wiki"
 		},
+		// "separate-outputs":
+		"icon": false,
+		// "icon-size":
+		// "min-length":
+		// "max-length":
+      "on-click-right": "hyprctl dispatch 'hl.dsp.window.close()'",
 		"swap-icon-label": false
-	}
+	},
 }

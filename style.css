@@ -8,8 +8,8 @@
 
 * {
 	font-family: "GoogleSansCode Nerd Font";
-	font-size: 13px;
-	font-weight: 500;
+	font-size: 15px;
+	font-weight: 700;
 	color: @fg;
 }
 
@@ -70,7 +70,7 @@ tooltip label {
 #window { margin: -1px 0; }
 
 #window label {
-	font-weight: 400;
+	font-weight: 700;
 	padding-left: 12px;
 }
 
@@ -159,7 +159,7 @@ tooltip label {
 /* Right modules */
 
 #mpris {
-	font-weight: 400;
+	font-weight: 700;
 	padding: 0 12px;
 }
 #mpris:hover,
