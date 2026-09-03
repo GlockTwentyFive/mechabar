@@ -39,6 +39,10 @@ A modular Waybar configuration
 	> If you use a different terminal, see the [Terminal](#configuration)
 	> section below.
 
+### Dependencies
+
+- fzf,notify-send,bluetoothctl,brightnessctl,nmcli,pactl
+
 #
 
 ### Installation
@@ -76,7 +80,7 @@ If you use a different terminal, replace all invocations of
 // ~/.config/waybar/modules/custom/power.jsonc
 
 "custom/power": {
-	// "on-click": "kitty -e ~/.config/waybar/scripts/power",
+	// "on-click": "alacritty -e ~/.config/waybar/scripts/power",
 	"on-click": "ghostty -e ~/.config/waybar/scripts/power",
 }
 ```

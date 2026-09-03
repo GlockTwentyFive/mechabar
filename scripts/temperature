@@ -1,0 +1,77 @@
+#!/bin/bash
+
+get_hwmon_by_pci() {
+    local pci="$1"
+
+    for hwmon in /sys/class/hwmon/hwmon*; do
+        [ -e "$hwmon/device" ] || continue
+
+        local device
+        device=$(readlink -f "$hwmon/device")
+
+        case "$device" in
+            */"$pci")
+                echo "$hwmon"
+                return
+                ;;
+        esac
+    done
+}
+
+get_temp() {
+    local hwmon="$1"
+    local sensor="$2"
+
+    [ -n "$hwmon" ] || {
+        echo "N/A"
+        return
+    }
+
+    [ -r "$hwmon/$sensor" ] || {
+        echo "N/A"
+        return
+    }
+
+    local value
+    value=$(<"$hwmon/$sensor") || {
+        echo "N/A"
+        return
+    }
+
+    echo $((value / 1000))
+}
+
+get_hwmon_by_name() {
+    local name="$1"
+
+    for hwmon in /sys/class/hwmon/hwmon*; do
+        [ -r "$hwmon/name" ] || continue
+
+        if [ "$(<"$hwmon/name")" = "$name" ]; then
+            echo "$hwmon"
+            return
+        fi
+    done
+}
+
+# Hardware
+CPU_HWMON=$(get_hwmon_by_name k10temp)
+DGPU_HWMON=$(get_hwmon_by_pci "0000:03:00.0")
+IGPU_HWMON=$(get_hwmon_by_pci "0000:07:00.0")
+NVME_HWMON=$(get_hwmon_by_name nvme)
+SYSTEM_HWMON=$(get_hwmon_by_name acpitz)
+
+# Temperatures
+CPU=$(get_temp "$CPU_HWMON" temp1_input)
+
+DGPU=$(get_temp "$DGPU_HWMON" temp1_input)
+DGPU_HOT=$(get_temp "$DGPU_HWMON" temp2_input)
+DGPU_MEM=$(get_temp "$DGPU_HWMON" temp3_input)
+
+IGPU=$(get_temp "$IGPU_HWMON" temp1_input)
+
+NVME=$(get_temp "$NVME_HWMON" temp1_input)
+SYSTEM=$(get_temp "$SYSTEM_HWMON" temp1_input)
+
+printf '%s\n' \
+  "{\"text\":\" ${CPU}°C\",\"tooltip\":\" System Temperature\\r├─ CPU      →  ${CPU}°C\\r├─ dGPU     →  ${DGPU}°C\\r├─ Hotspot  →  ${DGPU_HOT}°C\\r├─ VRAM     →  ${DGPU_MEM}°C\\r├─ iGPU     →  ${IGPU}°C\\r├─ NVMe     →  ${NVME}°C\\r└─ System   →  ${SYSTEM}°C\"}"

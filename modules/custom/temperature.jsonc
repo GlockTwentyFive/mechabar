@@ -1,0 +1,11 @@
+{
+  "custom/temperature": {
+    "interval": 10,
+    "exec": "~/.config/waybar/scripts/temperature",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "max-length": 9,
+    "min-length": 9
+  }
+}

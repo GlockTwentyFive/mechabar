@@ -1,6 +1,6 @@
 {
 	"wlr/taskbar": {
-		"ignore-list": [ "kitty" ],
+		"ignore-list": [ "alacritty" ],
 		"on-click": "activate",
 		"cursor": true
 	}

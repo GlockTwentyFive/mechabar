@@ -1,0 +1,11 @@
+{
+  "custom/gamemode": {
+     "on-click": "calos-toggle-gamemode",
+     "on-click-right": "calos-toggle-game",
+     "exec": "~/.config/waybar/scripts/submap",
+     "signal": 10,
+     "min-length": 2,
+     "max-length": 2,
+    "return-type": "json"
+   },
+}

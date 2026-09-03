@@ -1,0 +1,10 @@
+{
+  "custom/notifications": {
+      "on-click": "calos-toggle-notifications",
+      "exec": "~/.config/waybar/scripts/notifications",
+      "signal": 9,
+      "min-length": 2,
+      "max-length": 2,
+     "return-type": "json"
+    },
+}

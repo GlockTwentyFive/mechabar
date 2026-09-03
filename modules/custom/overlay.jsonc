@@ -1,0 +1,9 @@
+{
+  "custom/overlay": {
+		"format": " 󱂬 ",
+		"on-click": "qs ipc -c overview call overview toggle",
+		"tooltip": false,
+      "min-length": 4,
+      "max-length": 4,
+	}
+}

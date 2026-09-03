@@ -1,0 +1,10 @@
+{
+  "custom/bluelight": {
+      "on-click": "calos-toggle-nightlight",
+      "exec": "~/.config/waybar/scripts/bluelight",
+      "signal": 11,
+      "min-length": 2,
+      "max-length": 2,
+     "return-type": "json"
+    },
+}
