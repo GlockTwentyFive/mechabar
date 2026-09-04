@@ -41,7 +41,7 @@ A modular Waybar configuration
 
 ### Dependencies
 
-- fzf,notify-send,bluetoothctl,brightnessctl,nmcli,pactl
+- fzf,notify-send,bluetoothctl,brightnessctl,nmcli,pactl,makoctl
 
 #
 

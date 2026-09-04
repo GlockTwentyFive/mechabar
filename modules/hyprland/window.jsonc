@@ -2,8 +2,8 @@
   "hyprland/window": {
       "tooltip": true,
       "tooltip-format": "Right Click to Exit",
-		"format": "{class}",
-		"rewrite": {
+		  "format": "{class}",
+		  "rewrite": {
 			"^$": "",
 			// "^Alacritty$": "btop++",
 			"": "Desktop",
@@ -13,6 +13,7 @@
       "com.github.PintaProject.Pinta": "  Pinta Image Editor",
 			"cava": "  CAVA Audio Visualizer",
       "Alacritty": " Alacritty",
+      "kitty": " Kitty",
 			"firefox": "󰈹  Mozilla Firefox",
 			"btop": "  BTOP++ System Information",
       "yazi": "  Yazi",
